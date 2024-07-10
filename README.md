@@ -1,2 +1,2 @@
-# Twitter Clon API
+# Rails social network API
 
