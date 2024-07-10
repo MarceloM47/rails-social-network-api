@@ -51,7 +51,7 @@ MONGODB_ATLAS_URI="mongodb+srv://<username>:<password>@<cluster-url>/<database-n
   rails s
   ```
 
-- The API will be available at http://localhost:3100
+- The API will be available at http://localhost:3100/api/v1
 
 <br>
 
