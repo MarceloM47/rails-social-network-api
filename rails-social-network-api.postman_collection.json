@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "1bce4b02-070e-431f-8dae-bf2675c9c341",
+		"name": "rails-social-network-api",
+		"description": "[Github repo](https://github.com/MarceloM47/rails-social-network-api)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31287692"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Following",
+					"item": [
+						{
+							"name": "follow",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl\n}}/users/6667142accfc2caa11ec09db/follow",
+									"host": [
+										"{{apiUrl\n}}"
+									],
+									"path": [
+										"users",
+										"6667142accfc2caa11ec09db",
+										"follow"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userFollows",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl\n}}/users/6667142accfc2caa11ec09db/follows",
+									"host": [
+										"{{apiUrl\n}}"
+									],
+									"path": [
+										"users",
+										"6667142accfc2caa11ec09db",
+										"follows"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unFollow",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl\n}}/users/666604b5ad0a71e16574c0b4/unfollow",
+									"host": [
+										"{{apiUrl\n}}"
+									],
+									"path": [
+										"users",
+										"666604b5ad0a71e16574c0b4",
+										"unfollow"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "marcelo",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiUrl\n}}/users/login",
+							"host": [
+								"{{apiUrl\n}}"
+							],
+							"path": [
+								"users",
+								"login"
+							],
+							"query": [
+								{
+									"key": "marcelo",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "test7",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test7@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiUrl\n}}/users/register",
+							"host": [
+								"{{apiUrl\n}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Likes",
+					"item": [
+						{
+							"name": "likePost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl\n}}/posts/668dd0a0078d2327ec2f1ede/like",
+									"host": [
+										"{{apiUrl\n}}"
+									],
+									"path": [
+										"posts",
+										"668dd0a0078d2327ec2f1ede",
+										"like"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "likesCount",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl\n}}/posts/668dd0a0078d2327ec2f1ede/likes_count",
+									"host": [
+										"{{apiUrl\n}}"
+									],
+									"path": [
+										"posts",
+										"668dd0a0078d2327ec2f1ede",
+										"likes_count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unLikePost",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl\n}}/posts/668dd0a0078d2327ec2f1ede/like",
+									"host": [
+										"{{apiUrl\n}}"
+									],
+									"path": [
+										"posts",
+										"668dd0a0078d2327ec2f1ede",
+										"like"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getPosts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNjY2NjA0YjVhZDBhNzFlMTY1NzRjMGI0In0.J5DSRSagiyFweg9syPUWdh0HsPILa0pszyLFKiDywjI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl\n}}/posts?page=1&per_page=2",
+							"host": [
+								"{{apiUrl\n}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNjY2NjA0YjVhZDBhNzFlMTY1NzRjMGI0In0.J5DSRSagiyFweg9syPUWdh0HsPILa0pszyLFKiDywjI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl\n}}/posts?content=Hola que hace2",
+							"host": [
+								"{{apiUrl\n}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Hola que hace2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNjY2NjA0YjVhZDBhNzFlMTY1NzRjMGI0In0.J5DSRSagiyFweg9syPUWdh0HsPILa0pszyLFKiDywjI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl\n}}/posts/668dd125078d2327ec2f1edf?content=Hola que hacen2",
+							"host": [
+								"{{apiUrl\n}}"
+							],
+							"path": [
+								"posts",
+								"668dd125078d2327ec2f1edf"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Hola que hacen2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNjY2NjA0YjVhZDBhNzFlMTY1NzRjMGI0In0.J5DSRSagiyFweg9syPUWdh0HsPILa0pszyLFKiDywjI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl\n}}/posts/6668a0dd0135bc3033f9251e",
+							"host": [
+								"{{apiUrl\n}}"
+							],
+							"path": [
+								"posts",
+								"6668a0dd0135bc3033f9251e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNjY2NjA0YjVhZDBhNzFlMTY1NzRjMGI0In0.J5DSRSagiyFweg9syPUWdh0HsPILa0pszyLFKiDywjI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl\n}}/posts/6668a0dd0135bc3033f9251e",
+							"host": [
+								"{{apiUrl\n}}"
+							],
+							"path": [
+								"posts",
+								"6668a0dd0135bc3033f9251e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
