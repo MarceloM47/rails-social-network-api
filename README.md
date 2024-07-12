@@ -1,6 +1,11 @@
 # Rails social network API
 <br>
 
+## You can also check the Wiki:
+[Wiki](https://github.com/MarceloM47/rails-social-network-api/wiki)
+
+<br>
+
 ## Installation
 
 
