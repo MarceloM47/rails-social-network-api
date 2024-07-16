@@ -44,3 +44,7 @@ group :development do
 end
 
 gem "dotenv-rails"
+
+gem "sidekiq", "~> 7.3"
+
+gem "redis", "~> 5.2"

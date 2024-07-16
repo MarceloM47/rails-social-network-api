@@ -28,6 +28,13 @@ class Api::V1::AuthenticationController < ApplicationController
       payload = { user_id: @user.id }
       secret = Rails.application.credentials.secret_key_base
       token = create_token(payload, secret)
+      cookies.signed[:token] = {
+        value: token,
+        expires: 1.hour.from_now,
+        httponly: true,
+        path: '/',
+        secure: Rails.env.production?
+      }
       render json: { user_id: @user._id }, status: :created
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
